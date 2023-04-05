@@ -16,4 +16,5 @@ def test_successful_search(browser_open):
 
 def test_unscessful_search(browser_open):
     browser.element('[name="q"]').should(be.blank).type('sdfsfesfsfef').press_enter()
-    browser.element('[class="card-section"]').should(have.text('Страницы, содержащие все слова запроса, не найдены.'))
+    browser.element('[id="result-stats"]').should(have.text('Результатов: примерно 0'))
+    print('Поиск не дал результатов')
