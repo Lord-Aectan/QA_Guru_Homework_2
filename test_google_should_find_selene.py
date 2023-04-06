@@ -6,9 +6,7 @@ from selene import be, have
 @pytest.fixture
 def browser_open():
     browser.open('https://google.com')
-    browser.driver.maximize_window()
-
-
+    browser.driver.set_window_size(1920, 1080)
 
 def test_successful_search(browser_open):
     browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
