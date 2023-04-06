@@ -8,9 +8,11 @@ def browser_open():
     browser.open('https://google.com')
     browser.driver.set_window_size(1920, 1080)
 
+
 def test_successful_search(browser_open):
     browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
     browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
+
 
 def test_unscessful_search(browser_open):
     browser.element('[name="q"]').should(be.blank).type('sdfsfesfsfef').press_enter()
